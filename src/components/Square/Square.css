@@ -1,0 +1,33 @@
+.square {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.square:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilos para la sección de turnos */
+
+/* Estilos para los cuadrados de turno */
+.turn .square {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 2px solid transparent; /* Inicialmente sin borde */
+}
+
+/* Estilo para el turno seleccionado */
+.turn .square.selected {
+  border-color: blue; /* Borde azul para indicar el turno activo */
+  background-color: blue; /* Borde azul para indicar el turno activo */
+  border-radius: 10px;
+}

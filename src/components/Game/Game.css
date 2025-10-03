@@ -1,0 +1,15 @@
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
+  gap: 10px; /* Espacio entre las celdas */
+}
+.cell {
+  width: 100px; /* Ancho fijo para cada celda */
+  height: 100px; /* Alto fijo para cada celda */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem; /* Tamaño de fuente grande para X y O */
+  border: 2px solid #000; /* Borde para las celdas */
+  cursor: pointer; /* Cambia el cursor al pasar sobre una celda */
+}
