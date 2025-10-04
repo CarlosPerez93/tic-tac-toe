@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { TURNS } from "../utils/constatns/turns.enum";
-import { checkWinner } from "../utils/functions/checkWinner";
+import { findBestMove, checkWinner } from "../utils/functions/";
+
 import type {
   WinnerProps,
   UseBoardReturn,
@@ -42,6 +43,15 @@ const useBoard = (): UseBoardReturn => {
 
     if (newWinner) setWinner(newWinner);
   };
+
+  useEffect(() => {
+    if (turn === TURNS.O && !winner) {
+      const bestMove = findBestMove(board);
+      setTimeout(() => {
+        updateBoard(bestMove);
+      }, 1000);
+    }
+  }, [turn, winner, board]);
 
   return {
     winner,

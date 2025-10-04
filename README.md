@@ -1,69 +1,29 @@
-# React + TypeScript + Vite
+# Tic Tac Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a classic Tic Tac Toe game built with React, TypeScript, and Vite. The main purpose of this project is to demonstrate a solid understanding of modern web development concepts, including component-based architecture, unit testing, and the use of hooks.
 
-Currently, two official plugins are available:
+## Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Component-Based Architecture:** The application is structured into reusable and independent components, each with its own specific responsibility. This promotes a clean and maintainable codebase.
+- **Unit Testing:** The project includes a suite of unit tests for components, hooks, and utility functions, ensuring the reliability and correctness of the code.
+- **Custom Hooks:** The game logic is encapsulated in a custom hook (`useBoard`), which separates the logic from the UI and allows for easy reuse.
+- **TypeScript:** The use of TypeScript provides static typing, which helps to catch errors during development and improves the overall code quality.
+- **Vite:** The project is set up with Vite, a modern and fast build tool that provides an excellent development experience.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The project is organized into the following main directories:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- `src/components`: Contains the reusable React components.
+- `src/hooks`: Contains the custom hooks.
+- `src/utils`: Contains utility functions, constants, and type definitions.
+- `src/views`: Contains the main views of the application.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+To run the project locally, follow these steps:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  Clone the repository.
+2.  Install the dependencies with `npm install`.
+3.  Run the development server with `npm run dev`.
+4.  Run the tests with `npm run test`.
