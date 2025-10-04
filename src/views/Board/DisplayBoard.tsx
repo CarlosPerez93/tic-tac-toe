@@ -1,7 +1,7 @@
-import Game from "../../components/Game/Game";
-import ButtonReset from "../../components/ResetGame/ResetGame";
-import TurnsDisplay from "../../components/TurnsDisplay/TurnsDisplay";
-import WinnerDisplay from "../../components/WinnerDisplay/WinnerDisplay";
+import Game from "../../components/Game";
+import ButtonReset from "../../components/ResetGame";
+import TurnsDisplay from "../../components/TurnsDisplay";
+import WinnerDisplay from "../../components/WinnerDisplay";
 
 import useBoard from "../../hooks/useBoard";
 

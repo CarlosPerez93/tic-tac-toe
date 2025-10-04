@@ -1,0 +1,1 @@
+export { findBestMove } from "./minimax";
