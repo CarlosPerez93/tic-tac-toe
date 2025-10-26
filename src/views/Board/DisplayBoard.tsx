@@ -15,7 +15,7 @@ export const DisplayBoard = () => {
       <h1>Tic tac toe</h1>
       <ButtonReset onClick={resetaGame} />
       <Game board={board} updateBoard={updateBoard} />
-      <TurnsDisplay turn={turn} updateBoard={updateBoard} />
+      <TurnsDisplay turn={turn} />
       <WinnerDisplay onClick={resetaGame} winner={winner} />
     </main>
   );

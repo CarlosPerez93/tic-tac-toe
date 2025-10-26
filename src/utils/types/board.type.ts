@@ -16,7 +16,7 @@ export type SquareProps = {
 
 type TurnState = "X" | "O";
 
-type TurnsProps = { turn: TurnState } & Omit<BoardProps, "board">;
+type TurnsProps = { turn: TurnState };
 
 type WinnerProps = string | null | boolean;
 

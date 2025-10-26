@@ -10,8 +10,10 @@ export const Square = ({
 }: SquareProps) => {
   const className = `square ${isSelected ? "selected" : ""}`;
 
+  const isNotUndefined = updateBoard && squareIndex !== undefined;
+
   const handleClick = () => {
-    updateBoard!(squareIndex!);
+    if (isNotUndefined) updateBoard(squareIndex);
   };
 
   return (

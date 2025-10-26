@@ -51,7 +51,7 @@ const useBoard = (): UseBoardReturn => {
         updateBoard(bestMove);
       }, 1000);
     }
-  }, [turn, winner, board]);
+  }, [turn, winner, TURNS.O]);
 
   return {
     winner,
@@ -63,5 +63,3 @@ const useBoard = (): UseBoardReturn => {
 };
 
 export default useBoard;
-
-export const suma = (a: number, b: number) => a + b;
