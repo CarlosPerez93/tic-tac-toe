@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { TURNS } from "../utils/constatns/turns.enum";
-import { findBestMove, checkWinner } from "../utils/functions/";
+import { findBestMove, findRandomMove, checkWinner } from "../utils/functions/";
 
 import type {
   WinnerProps,
@@ -11,11 +11,15 @@ import type {
 } from "../utils/types/board.type";
 
 const initialBoard: BoardState = Array(9).fill(null);
+const RANDOM_BOT_GAME_CHANCE = 0.35;
 
 const useBoard = (): UseBoardReturn => {
   const [turn, setTurn] = useState<TurnState>(TURNS.X);
   const [winner, setWinner] = useState<WinnerProps>(null);
   const [board, setBoard] = useState<BoardState>(initialBoard);
+  const [botPlaysRandomly, setBotPlaysRandomly] = useState(
+    () => Math.random() < RANDOM_BOT_GAME_CHANCE,
+  );
 
   const nextTurn = () => {
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
@@ -26,6 +30,7 @@ const useBoard = (): UseBoardReturn => {
     setBoard(initialBoard);
     setTurn(TURNS.X);
     setWinner(null);
+    setBotPlaysRandomly(Math.random() < RANDOM_BOT_GAME_CHANCE);
   };
 
   const updateBoard = (index: number) => {
@@ -46,12 +51,14 @@ const useBoard = (): UseBoardReturn => {
 
   useEffect(() => {
     if (turn === TURNS.O && !winner) {
-      const bestMove = findBestMove(board);
+      const bestMove = botPlaysRandomly
+        ? findRandomMove(board)
+        : findBestMove(board);
       setTimeout(() => {
         updateBoard(bestMove);
       }, 1000);
     }
-  }, [turn, winner, board]);
+  }, [turn, winner, board, botPlaysRandomly]);
 
   return {
     winner,

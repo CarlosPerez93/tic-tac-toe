@@ -86,3 +86,15 @@ export function findBestMove(board: BoardState): number {
   }
   return bestMove;
 }
+
+export function findRandomMove(board: BoardState): number {
+  const availableMoves: number[] = [];
+
+  board.forEach((cell, index) => {
+    if (cell === null) availableMoves.push(index);
+  });
+
+  return (
+    availableMoves[Math.floor(Math.random() * availableMoves.length)] ?? -1
+  );
+}

@@ -1,2 +1,2 @@
 export { checkWinner } from "./checkwinner";
-export { findBestMove } from "./minimax";
+export { findBestMove, findRandomMove } from "./minimax";
